@@ -1,0 +1,28 @@
+{
+    "name": "vscode-loza",
+    "displayName": "Loza programming language",
+    "description": "Loza programming language support for VSCode",
+    "version": "0.0.5",
+    "publisher": "parsampsh",
+    "repository": "https://github.com/wsoum/vscode-loza",
+    "icon": "data/loza-logo.png",
+    "engines": {
+        "vscode": "^1.35.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "loza",
+            "aliases": ["Loza", "loza"],
+            "extensions": [".loza", ".lozat"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "loza",
+            "scopeName": "source.loza",
+            "path": "./syntaxes/loza.tmLanguage.json"
+        }]
+    }
+}

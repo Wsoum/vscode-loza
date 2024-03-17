@@ -1,0 +1,108 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Loza",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#single_strings"
+		},
+		{
+			"include": "#builtin_commands"
+		},
+		{
+			"include": "#datatypes"
+		},
+		{
+			"include": "#boolean_and_null"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#modules"
+		},
+		{
+			"include": "#builtin_functions"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.loza",
+				"match": "\\b(ns|namespace|endnamespace|endns|func|endfunc|class|endclass|if|else|endif|elif|while|endwhile|try|endtry|end)\\b"
+			}]
+		},
+		"builtin_commands": {
+			"patterns": [{
+				"name": "constant.character.escape.loza",
+				"match": "\\b(return|goto|gotoif|import|import_once|import_run|import_run_once|raise|mem|pass|break|continue|and|or|not|in|is|assert|__docstring__|use|section|label)\\b"
+			}]
+		},
+		"datatypes": {
+			"patterns": [{
+				"name": "entity.name.type.loza",
+				"match": "\\b(string|str|int|integer|list|array|bool|float|tuple|dict)\\b"
+			}]
+		},
+		"boolean_and_null": {
+			"patterns": [{
+				"name": "entity.name.tag.loza",
+				"match": "\\b(true|True|false|False|null|None)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.loza",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.loza",
+					"match": "\\\\."
+				}
+			]
+		},
+		"single_strings": {
+			"name": "string.quoted.single.loza",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.loza",
+					"match": "\\\\."
+				}
+			]
+		},
+		"variables": {
+			"patterns": [{
+				"name": "variable.loza",
+				"match": "\\$[a-zA-Z_0-9$\\.]*"
+			}]
+		},
+		"modules": {
+			"patterns": [{
+				"name": "entity.name.tag.loza",
+				"match": "\\@[a-zA-Z_0-9$\\.]*"
+			}]
+		},
+		"builtin_functions": {
+			"patterns": [{
+				"name": "entity.name.function.loza",
+				"match": "\\b(print|println|printl|perror|printf|clone|define|all_defines|undefine|is_defined|redefine|get|gget|set|gset|python|eval|py_load_file|py_load_module|register_shutdown|rmem|typeof|system|__namespace__|match|isset|read|exit|die|var_dump|out_start|out_end|out_clean|out_get|out_get_clean|func.list|func.exists|func.delete|class.list|class.exists|class.delete|debug|load_so)\\b"
+			}]
+		},
+		"comments": {
+			"name": "comment.line.number-sign.loza",
+			"begin": "(\\#)",
+			"end": "($)"
+		}
+	},
+	"scopeName": "source.loza"
+}
